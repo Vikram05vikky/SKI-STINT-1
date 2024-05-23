@@ -76,12 +76,7 @@ function TaskCompleted() {
             />
           </div>
           </div>
-        <div className="main-tabs">
-          {/* <div onClick={() => handleTabClick("all")}><h2>All Tasks</h2></div>
-          <div onClick={() => handleTabClick("yet")}><h2>Yet to start</h2></div>
-          <div onClick={() => handleTabClick("progress")}><h2>In progress</h2></div>
-          <div onClick={() => handleTabClick("completed")}><h2>Completed</h2></div> */}
-        </div>
+       
         <div className="taskbar">
           <h3>Completed Tasks</h3>
           <div className="task-list">
