@@ -1,0 +1,172 @@
+/* Base styles */
+
+
+.task-list2 {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.profile-details2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; 
+    height: 2.5cm;
+    
+}
+
+.profile-icon2 {
+    margin-left: 50px;
+}
+
+.details2 {
+    /* flex: 1;  */
+    margin-right: 1050px;
+    white-space: nowrap;
+}
+
+
+.land-container2 {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--bg);
+    padding: 1.5rem;
+}
+
+.main-bar2 {
+    background-color: var(--main-top-bar);
+    border-radius: 15px;
+    height: 80px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.main-search {
+    outline: none;
+    border: none;
+    background-color: var(--search-nav);
+    height: 3rem;
+    width: 80%;
+    border-radius: 50px;
+    padding-left: 2rem;
+    position: absolute;
+    top: 21.5%;
+    font-size: var(--normal-font-size);
+}
+
+.main-search:focus {
+    background-color: var(--nav-hover);
+}
+
+.main-tabs2 {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 3rem;
+}
+
+.main-tabs2 div {
+    background-color: var(--search-nav);
+    padding: 0.5rem 5rem 0.5rem 5rem;
+    border-radius: 10px;
+    font-size: var(--normal-font-size);
+    color: var(--nav-text);
+    cursor: pointer;
+}
+
+.main-tabs2 div:hover {
+    background-color: var(--nav-hover);
+}
+
+.taskbar2 {
+    height: calc(100vh - 55vh);
+    width: 100%;
+    background-color: var(--main-top-bar);
+    margin-top: 1rem;
+    border-radius: 15px;
+    padding: 2rem;
+    overflow-y: scroll;
+}
+
+.taskbar2 > h3 {
+    color: var(--text-side);
+}
+
+.task-list2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.task-list2 > div > div > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-list2 > div > div:first-child {
+    width: 100%;
+}
+
+.task-list2 > div > div:nth-child(2) {
+    width: 0.8%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.task-list2 > div {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--search-nav);
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    padding: 0rem 0rem 0rem 2rem;
+}
+
+.task-list2 h3,
+.task-list2 p {
+    margin: 10px 0px;
+}
+
+.taskbar2::-webkit-scrollbar {
+    width: 12px;
+}
+
+.taskbar2::-webkit-scrollbar-track {
+    background-color: var(--main-top-bar);
+}
+
+.taskbar2::-webkit-scrollbar-thumb {
+    background-color: var(--search-nav);
+    border-radius: 6px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .main-search2 {
+        width: 90%;
+    }
+
+    .main-tabs2 div {
+        padding: 0.5rem 3rem;
+    }
+
+    .task-list2 > div {
+        padding: 0rem 0rem 0rem 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .main-search2 {
+        width: 95%;
+    }
+
+    .main-tabs2 div {
+        padding: 0.5rem 2rem;
+    }
+
+    .task-list2 > div {
+        flex-direction: column;
+    }
+}
