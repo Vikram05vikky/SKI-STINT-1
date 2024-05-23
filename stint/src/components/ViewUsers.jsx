@@ -85,7 +85,6 @@ function ViewUsers() {
                   <div className="icn1">
                     <AccountCircleIcon sx={{ fontSize: "2.5rem" }} />
                   </div>
-
                   <div className="det1-btn1">
                     <div className="det1">
                       <h3>{item.name}</h3>
