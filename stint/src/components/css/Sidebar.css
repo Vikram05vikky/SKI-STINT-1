@@ -16,10 +16,9 @@
     --text-color: #707070;
     --hover: #7CBCFF;
 
-    
-    --tran-03: all 0.3s ease;
+    /* --tran-03: all 0.3s ease;
     --tran-04: all 0.3s ease;
-    --tran-05: all 0.3s ease;
+    --tran-05: all 0.3s ease; */
 }
 
 body {
@@ -45,18 +44,22 @@ body.dark {
 
 .sidebar {
     position: fixed;
+    margin-top: 9%;
+    margin-left: .5vw;
+    border-radius: 2rem;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 250px;
+    height: 80%;
+    width: 16%;
     padding: 10px 14px;
     background: var(--sidebar-color);
     transition: var(--tran-05);
     z-index: 100;
+    /* border-radius: 2px; */
 }
-.sidebar.close {
+/* .sidebar.close {
     width: 88px;
-}
+} */
 
 
 .sidebar li {

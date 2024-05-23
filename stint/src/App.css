@@ -108,7 +108,7 @@ body.dark{
 
 .sub-container{
   padding-left: 15rem;
-  background-color: var(--top-side-bar);
+  background-color: var(--bg);
 }
 .dark-mode-toggle{
   margin-top: 0px;

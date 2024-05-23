@@ -8,9 +8,15 @@
     justify-content: space-between; 
 }
 .nav-container>h2{
+    padding-right: 60vw;
     font-weight: 600;
 }
 .nav-icon-container{
     display: flex;
     gap:5rem;
+}
+
+.image-src{
+    height: 10vh;
+    width: 5vw;
 }
