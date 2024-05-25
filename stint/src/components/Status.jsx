@@ -1,8 +1,4 @@
 import { useState } from "react";
-import reactLogo from "../assets/react.svg";
-import {useNavigate } from "react-router-dom";
-
-import viteLogo from "/vite.svg";
 import "./css/Status.css";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
