@@ -7,9 +7,9 @@ export default function Navbar() {
   return (
     <div className='nav-container'>
       <div className='image-src'>
-    <img src={img} alt="" />
+    {/* <img src={img} alt="" /> */}
     </div>
-    <h2>SKI-STINT</h2>
+    {/* <h2>SKI-STINT</h2> */}
     <div className='nav-icon-container' >
     
     <DarkMode/>

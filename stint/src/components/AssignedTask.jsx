@@ -1,5 +1,6 @@
 
 
+import Sidebar from "./Sidebar";
 import "./css/LandingPage.css";
 
   
@@ -54,6 +55,7 @@ function LandingPage() {
     <>
     {/* <Navbar/> */}
     <div className="land-container1">
+      <Sidebar/>
         <div className="main-bar1">
           <div className="search">
             <input

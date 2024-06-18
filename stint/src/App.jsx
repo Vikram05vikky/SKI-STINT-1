@@ -14,7 +14,7 @@ import ViewUsers from './components/ViewUsers';
 export default function App() {
   return (
     <div className='container'>
-    <Sidebar/>
+    {/* <Sidebar/> */}
     <Navbar/>
     <div className='sub-container'>
     <Routes>

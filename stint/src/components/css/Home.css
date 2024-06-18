@@ -85,7 +85,7 @@
   }
   
   .taskbar3>h3{
-    color: var(--tasklist-text);
+    color: var(--text-color);
     /* margin-top: -1rem; */
     /* color: aliceblue; */
     width: 10vw;

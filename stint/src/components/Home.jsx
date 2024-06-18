@@ -7,6 +7,7 @@ import './css/Home.css'
 import "../App.css";
 import IMG from "./images/img3.png";
 import Button from "@mui/material/Button";
+import Sidebar from "./Sidebar";
 
 function Home() {
   const [assignedTo, setAssignedTo] = useState("");
@@ -62,6 +63,7 @@ function Home() {
     <>
     
       <div className="land-container">
+        <Sidebar/>
         <div className="main-bar">
           
         </div>

@@ -2,6 +2,7 @@
 import "./css/LandingPage.css";
 import Navbar from "./Navbar";
 import SearchIcon from '@mui/icons-material/Search';
+import Sidebar from "./Sidebar";
 
   
 
@@ -65,6 +66,7 @@ function TaskPending() {
     <>
     {/* <Navbar/> */}
       <div className="land-container1">
+        <Sidebar/>
       <div className="main-bar1">
           <div className="search">
             <input

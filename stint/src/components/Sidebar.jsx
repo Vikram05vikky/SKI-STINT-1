@@ -56,13 +56,13 @@ function Sidebar() {
     <div className="sidebar">
       <header>
         <div className="image-text">
-          {/* <span className="image" style={{ marginTop: "0.7rem" }}>
+          <span className="image" style={{ marginTop: "0.7rem" }}>
             <img src={namelogo} alt="logo" />
-          </span> */}
-          {/* <div className="text logo-text">
+          </span>
+          <div className="text logo-text">
             <span className="name">SKI-STINT</span>
             <span className="profession">Task Management</span>
-          </div> */}
+          </div>
         </div>
       </header>
       <div className="menu-bar">

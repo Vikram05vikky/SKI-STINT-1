@@ -3,6 +3,7 @@ import "./css/ViewUsers.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 // import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
 function ViewUsers() {
   const navigate = useNavigate();
@@ -64,6 +65,7 @@ function ViewUsers() {
     <>
       {/* <Navbar /> */}
       <div className="land-container1">
+        <Sidebar/>
         <div className="main-bar1">
           <div className="search">
             <input

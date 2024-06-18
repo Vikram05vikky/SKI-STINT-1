@@ -1,6 +1,7 @@
 
 import "./css/LandingPage.css";
 import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
 
   
 
@@ -64,6 +65,7 @@ function YetToStart() {
     <>
     {/* <Navbar/> */}
     <div className="land-container1">
+      <Sidebar/>
       <div className="main-bar1">
           <div className="search">
             <input

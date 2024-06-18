@@ -81,7 +81,7 @@
 }
 
 .taskbar2 {
-    height: calc(100vh - 55vh);
+    height: calc(100vh - 60vh);
     width: 100%;
     background-color: var(--main-top-bar);
     margin-top: 1rem;
