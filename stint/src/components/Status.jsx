@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./css/Status.css";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Sidebar from "./Sidebar";
 
 function Status() {
 
@@ -82,6 +83,7 @@ function Status() {
   return (
     <>
       <div className="land-container2">
+        <Sidebar/>
         <div className="main-bar2">
         <div className="search">
             <input

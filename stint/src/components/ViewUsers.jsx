@@ -1,13 +1,14 @@
-import { useState } from "react";
+
+import React, { useState } from "react";
 import "./css/ViewUsers.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-// import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import SearchIcon from '@mui/icons-material/Search';
 
 function ViewUsers() {
   const navigate = useNavigate();
-
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleStatus = () => {
     navigate("/status");
@@ -19,7 +20,7 @@ function ViewUsers() {
       designation: "CSE HOD",
     },
     {
-      name: "Dr.SASASAS",
+      name: "Dr.ABCDE",
       designation: "ECE HOD",
     },
     {
@@ -27,7 +28,7 @@ function ViewUsers() {
       designation: "Ass.Prof",
     },
     {
-      name: "Dr.SASASAS",
+      name: "Dr.abcdefg",
       designation: "Ass.Prof",
     },
     {
@@ -35,7 +36,11 @@ function ViewUsers() {
       designation: "Ass.Prof",
     },
     {
-      name: "Dr.SASASAS",
+      name: "Dr.pqrstuv",
+      designation: "Ass.Prof",
+    },
+    {
+      name: "Dr.mnopqrs",
       designation: "Ass.Prof",
     },
     {
@@ -43,11 +48,7 @@ function ViewUsers() {
       designation: "Ass.Prof",
     },
     {
-      name: "Dr.SASASAS",
-      designation: "Ass.Prof",
-    },
-    {
-      name: "Dr.SASASAS",
+      name: "Dr.lmnopq",
       designation: "Ass.Prof",
     },
     {
@@ -56,33 +57,37 @@ function ViewUsers() {
     },
   ];
 
-  const [activeTab] = useState("all");
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
-  const filteredData =
-    activeTab === "all" ? data : data.filter((item) => item.type === activeTab);
+  const filteredData = data.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.designation.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <>
-      {/* <Navbar /> */}
       <div className="land-container1">
-        <Sidebar/>
+        <Sidebar />
         <div className="main-bar1">
           <div className="search">
             <input
               type="text"
               className="main-search1"
               placeholder="🔎 Search..."
+              value={searchQuery}
+              onChange={handleSearchChange}
             />
           </div>
-          {/* <div className="home1">
-            <h2 onClick={handleHome}>Home</h2>
-          </div> */}
         </div>
 
         <div className="taskbar1">
           <div className="task-list1">
-            {filteredData.map((item, index) => (
-              <div key={index} id={item.type}>
+            { filteredData.length > 0 ?
+            filteredData.map((item, index) => (
+              <div key={index}>
                 <div className="content1">
                   <div className="icn1">
                     <AccountCircleIcon sx={{ fontSize: "2.5rem" }} />
@@ -92,7 +97,6 @@ function ViewUsers() {
                       <h3>{item.name}</h3>
                       <p>Designation: {item.designation}</p>
                     </div>
-
                     <div className="btn1">
                       <button
                         style={{
@@ -110,7 +114,11 @@ function ViewUsers() {
                   </div>
                 </div>
               </div>
-            ))}
+            )
+          ):(
+            <div className="no-match">No Match found</div>
+          )
+          }
           </div>
         </div>
       </div>

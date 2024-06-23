@@ -5,27 +5,24 @@ import AssignmentIcon from "@mui/icons-material/Assignment";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import NotStartedIcon from "@mui/icons-material/NotStarted";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useContext, createContext, useState } from "react";
+import PersonIcon from "@mui/icons-material/Person";
 import "../components/css/Sidebar.css";
 // import "../App.css";
 import namelogo from "../components/images/namelogo.png";
 // import LandingPage from "./LandingPage";
 import { useNavigate } from "react-router-dom";
 
-// const SidebarContext = createContext();
-
-// function SidebarProvider({ children }) {
-//   const [expanded, setExpanded] = useState(true);
-
-//   return (
-//     <SidebarContext.Provider value={{ expanded, setExpanded }}>
-//       <div className="body">{children}</div>
-//     </SidebarContext.Provider>
-//   );
-// }
 
 function Sidebar() {
 //   const { expanded } = useContext(SidebarContext);
+
+const [profileExpanded, setProfileExpanded] = useState(false);
+
+const toggleProfileExpand = () => {
+  setProfileExpanded(!profileExpanded);
+};
 
   const navigate = useNavigate();
 
@@ -74,30 +71,34 @@ function Sidebar() {
                 <span className="text nav-text">Home</span>
               </a>
             </li>
-            <li className="nav-link">
-              <a onClick={handleAssigned}>
-                <AssignmentIcon className="icon" />
-                <span className="text nav-text">Assigned Task</span>
-              </a>
+            <li className="nav-link" onClick={toggleProfileExpand}>
+              <PersonIcon className="icon" />
+              <span className="text nav-text">My Profile</span>
+              <KeyboardArrowDownIcon
+                style={{ marginTop: ".5rem", marginLeft: "1.6rem", color: "var(--text-color)", cursor: "pointer" }}
+                className={`dropdown-icon ${profileExpanded ? "expanded" : ""}`}
+              />
             </li>
-            <li className="nav-link">
-              <a onClick={handleCompleted}>
-                <AssignmentTurnedInIcon className="icon" />
-                <span className="text nav-text">Task Completed</span>
-              </a>
-            </li>
-            <li className="nav-link">
-              <a onClick={handlePending}>
-                <AssignmentLateIcon className="icon" />
-                <span className="text nav-text">Task Pending</span>
-              </a>
-            </li>
-            <li className="nav-link">
-              <a onClick={handleYet}>
-                <NotStartedIcon className="icon" />
-                <span className="text nav-text">Task yet to start</span>
-              </a>
-            </li>
+            {profileExpanded && (
+            <ul className="sub-menu-links">
+                <li className="nav-link" onClick={handleAssigned}>
+                  <AssignmentIcon className="icon" />
+                  <span className="text nav-text">Assigned Tasks</span>
+                </li>
+                <li className="nav-link" onClick={handleCompleted}>
+                  <AssignmentTurnedInIcon className="icon" />
+                  <span className="text nav-text">Tasks Completed</span>
+                </li>
+                <li className="nav-link" onClick={handlePending}>
+                  <AssignmentLateIcon className="icon" />
+                  <span className="text nav-text">Tasks Pending</span>
+                </li>
+                <li className="nav-link" onClick={handleYet}>
+                  <NotStartedIcon className="icon" />
+                  <span className="text nav-text">Tasks Yet to Start</span>
+                </li>
+            </ul>
+            )}
             <li className="nav-link">
               <a onClick={handleUsers}>
                 <AssignmentIndIcon className="icon" />
@@ -122,23 +123,3 @@ function Sidebar() {
 
 export default Sidebar;
 
-// export default Sidebar;
-
-// function Dashboard() {
-//   return (
-//     <section className="home">
-//       <div>
-//         <LandingPage />
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default function App() {
-//   return (
-//     <SidebarProvider>
-//       <Sidebar />
-//       {/* <Dashboard /> */}
-//     </SidebarProvider>
-//   );
-// }

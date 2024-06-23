@@ -65,7 +65,7 @@ function Home() {
       <div className="land-container">
         <Sidebar/>
         <div className="main-bar">
-          
+            
         </div>
         <div className="taskbar3">
           <h3>Assign a Task</h3>

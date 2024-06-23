@@ -1,10 +1,8 @@
 
-import { useState } from "react";
+import React, { useState } from "react";
 import "./css/LandingPage.css";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-
-  
 
 function TaskCompleted() {
   const data = [
@@ -40,7 +38,7 @@ function TaskCompleted() {
     },
   ];
 
-//   const [activeTab, setActiveTab] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const getTaskStatusColor = (type) => {
     switch (type) {
@@ -55,44 +53,59 @@ function TaskCompleted() {
     }
   };
 
-//   const handleTabClick = (tab) => {
-//     setActiveTab(tab);
-//   };
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
-//   const filteredData = activeTab === "completed" ? data : data.filter((item) => item.type === activeTab);
-  const filteredData = data.filter((item) => item.type === "complete");
+  const filteredData = data.filter(
+    (item) =>
+      item.type === "complete" &&
+      (item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.date.includes(searchQuery))
+  );
 
   return (
     <>
-    {/* <Navbar/> */}
-    <div className="land-container1">
-      <Sidebar/>
-      <div className="main-bar1">
+      {/* <Navbar/> */}
+      <div className="land-container1">
+        <Sidebar />
+        <div className="main-bar1">
           <div className="search">
             <input
               type="text"
               className="main-search1"
               placeholder="🔎 Search..."
+              value={searchQuery}
+              onChange={handleSearchChange}
             />
           </div>
-          </div>
-       
+        </div>
+
         <div className="taskbar">
           <h3>Completed Tasks</h3>
           <div className="task-list">
-            
-            {filteredData.map((item, index) => (
+          {filteredData.length > 0 ? (
+            filteredData.map((item, index) => (
               <div key={index} id={item.type}>
                 <div>
                   <h3>{item.title} assigned</h3>
                   <div>
                     <p>Task Description: {item.description}</p>
-                    <p style={{marginRight:"10px"}}>Date: {item.date}</p>
+                    <p style={{ marginRight: "10px" }}>Date: {item.date}</p>
                   </div>
                 </div>
-                <div className="task-status" style={{ backgroundColor: getTaskStatusColor(item.type) }}>&nbsp;</div>
+                <div
+                  className="task-status"
+                  style={{ backgroundColor: getTaskStatusColor(item.type) }}
+                >
+                  &nbsp;
+                </div>
               </div>
-            ))}
+            ))
+            ): (
+              <div className="no-match">No match found</div>
+            )}
           </div>
         </div>
       </div>
